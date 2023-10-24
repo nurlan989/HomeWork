@@ -33,7 +33,7 @@ void WriteToRiderNote()
    }
    output << "]";
 
-   std::cout << "Enter a text note from your arrival :\n";
+   std::cout << "Enter a text note after check-in :\n";
    std::cin.ignore();   
    std::getline(std::cin, textNote);
    output << " - " << textNote;
