@@ -34,8 +34,12 @@ void WriteToRiderNote()
    output << "]";
 
    std::cout << "Enter a text note after check-in :\n";
-   std::cin.ignore();   
-   std::getline(std::cin, textNote);
+   // std::cin.ignore();   
+   // Цитата Дмитрия: Идея на будущее: Можно "сливать" лишний символ перехода на новую строку из потока cin 
+   // в специально предназначенный для этого std::ws
+   // Разница по отношению к cin.ignore() в следующем: ignore пропустит ЛЮБОЙ следующий символ по дефолту, 
+   // а ws - только если там есть какой-то из пробельных (таб, переход на новую строку, пробел, вертикальный таб...)
+   std::getline(std::cin >> std::ws, textNote);
    output << " - " << textNote;
 
    output << std::endl;
